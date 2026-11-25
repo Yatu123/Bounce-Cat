@@ -9,7 +9,7 @@ A platformer game made in Godot where users are a cat and have to bounce a ball 
   
 # Built with
 - Godot
-- GD script
+- GS script
   
 # AI declaration
 AI was used to learn the GS script syntax for Godot.

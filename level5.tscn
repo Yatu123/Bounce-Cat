@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bo2u3ferw3iop"]
+
+[ext_resource type="Texture2D" uid="uid://cemfa44qt3e3d" path="res://Assets/Images/background.png" id="1_0jveu"]
+[ext_resource type="Script" uid="uid://brjolfrjobeuq" path="res://Scripts/Reset.gd" id="1_87x5k"]
+[ext_resource type="Texture2D" uid="uid://dh7o25jdrondy" path="res://Assets/Images/Level 5 Shadow.PNG" id="2_t4tfv"]
+[ext_resource type="Texture2D" uid="uid://bch1fibdyaex" path="res://Assets/Images/Level 5.PNG" id="3_bf6rn"]
+[ext_resource type="Texture2D" uid="uid://ba1p5eumlw6a8" path="res://Assets/Images/Level 5 a.PNG" id="3_yfwe1"]
+[ext_resource type="PackedScene" uid="uid://y7724j1ow585" path="res://ladder.tscn" id="4_bf6rn"]
+[ext_resource type="PackedScene" uid="uid://cqjw6c77ygr22" path="res://lever.tscn" id="5_x2odi"]
+[ext_resource type="PackedScene" uid="uid://ucsphnch75lv" path="res://ball.tscn" id="6_8at3q"]
+[ext_resource type="PackedScene" uid="uid://dqa7rp26lfswj" path="res://player.tscn" id="7_8at3q"]
+
+[node name="level5" type="Node2D" unique_id=1840957379]
+script = ExtResource("1_87x5k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=272241888]
+position = Vector2(640, 336)
+scale = Vector2(0.4, 0.298)
+texture = ExtResource("1_0jveu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=1905138314]
+position = Vector2(-1100, -983.22144)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("3_yfwe1")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=333384406]
+position = Vector2(658, 352)
+scale = Vector2(0.38450003, 0.28666666)
+
+[node name="Shadow" type="Sprite2D" parent="StaticBody2D2" unique_id=1049577706]
+position = Vector2(28.608536, -163.95348)
+scale = Vector2(1.0535815, 1.2530113)
+texture = ExtResource("2_t4tfv")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=1128189317]
+position = Vector2(-49.414845, -80.23257)
+scale = Vector2(1.0264412, 1.1193799)
+texture = ExtResource("3_bf6rn")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1962882750]
+position = Vector2(658, 352)
+scale = Vector2(0.38450003, 0.28666666)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3" unique_id=229489130]
+polygon = PackedVector2Array(-931.0792, -226.7442, -931.0792, 6.9766846, -564.36926, 13.953491, -564.36926, 502.32556, -1521.4563, 498.83716, -1521.4563, 289.5349, -1219.7659, 303.4884, -1219.7659, 87.20935, -1521.4563, 87.20935, -1521.4563, -1200, -1063.719, -1189.5349, -933.68, -1196.5116, -933.68, -791.8605, -117.035034, -795.3489, -114.434326, -994.18604, -710.01294, -1004.6512, -702.2106, -1200, 803.6411, -1179.0698, 806.2417, -659.3023, 559.1677, -673.2558, 559.1677, -505.81396, 990.8972, -502.32556, 990.8972, -1189.5349, 1492.8477, -1186.0465, 1487.6462, -1339.5349, -1594.2781, -1339.5349, -1586.4758, 732.5581, -561.76843, 756.9767, -561.76843, 1175.5813, -293.88818, 1186.0464, -296.4889, 948.83716, 1495.4485, 948.83716, 1495.4485, 652.32556, 1139.1416, 655.81396, 1139.1416, 66.27905, 1485.0454, 66.27905, 1490.2471, -97.67444, 730.8191, -115.11633, 728.2185, 41.860474, 915.4746, 59.30237, 910.27295, 331.3954, 704.8113, 324.41858, 699.60986, 254.65112, 551.3655, 247.67444, 551.3655, 83.72095, 403.12085, 94.186035, 403.12085, 373.25586, 98.82971, 369.76746, 98.82971, 641.8605, -301.69043, 638.3721, -301.69043, 17.441895, 260.078, 20.930176, 252.27563, -390.6977, 23.406982, -390.6977, 31.20935, -226.7442)
+
+[node name="Ladder" parent="." unique_id=467237968 instance=ExtResource("4_bf6rn")]
+position = Vector2(1124, 191)
+scale = Vector2(0.15, 0.15)
+next_level_scene = "uid://dm142asqbyxbg"
+
+[node name="Lever" parent="." unique_id=827420974 instance=ExtResource("5_x2odi")]
+position = Vector2(922, 147.00002)
+scale = Vector2(0.05, 0.05)
+
+[node name="Ball" parent="." unique_id=1809031952 instance=ExtResource("6_8at3q")]
+position = Vector2(337.00003, 445)
+scale = Vector2(0.1, 0.1)
+
+[node name="Player" parent="." unique_id=1513298358 instance=ExtResource("7_8at3q")]
+position = Vector2(160, 92)

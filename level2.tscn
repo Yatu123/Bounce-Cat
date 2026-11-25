@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bnblmsxflj8py"]
+
+[ext_resource type="Script" uid="uid://brjolfrjobeuq" path="res://Scripts/Reset.gd" id="1_rmy57"]
+[ext_resource type="Texture2D" uid="uid://cemfa44qt3e3d" path="res://Assets/Images/background.png" id="1_y0xe8"]
+[ext_resource type="Texture2D" uid="uid://dvpgowfo3idlw" path="res://Assets/Images/Level 2 Shadows.PNG" id="2_8tcn8"]
+[ext_resource type="Texture2D" uid="uid://cxd38rjssoskg" path="res://Assets/Images/Level 2.PNG" id="3_qulpo"]
+[ext_resource type="Texture2D" uid="uid://dl6jrnubdw761" path="res://Assets/Images/LevelTwoOutline.png" id="3_r6vdu"]
+[ext_resource type="PackedScene" uid="uid://dqa7rp26lfswj" path="res://player.tscn" id="4_21xmu"]
+[ext_resource type="PackedScene" uid="uid://y7724j1ow585" path="res://ladder.tscn" id="5_21xmu"]
+[ext_resource type="PackedScene" uid="uid://cqjw6c77ygr22" path="res://lever.tscn" id="6_8i3m3"]
+[ext_resource type="PackedScene" uid="uid://ucsphnch75lv" path="res://ball.tscn" id="7_8i3m3"]
+
+[node name="Node2D" type="Node2D" unique_id=1740462802]
+script = ExtResource("1_rmy57")
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="." unique_id=1655009983]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D10" unique_id=2128849105]
+position = Vector2(575.5625, 325.125)
+scale = Vector2(0.38362503, 0.287)
+texture = ExtResource("1_y0xe8")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D10/Sprite2D" unique_id=2053664547]
+position = Vector2(-1072.825, -1024.8258)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("3_qulpo")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="StaticBody2D10" unique_id=603795311]
+position = Vector2(0, 1)
+
+[node name="shadow" type="Sprite2D" parent="StaticBody2D10/StaticBody2D3" unique_id=614424133]
+position = Vector2(566.5, 294.81247)
+scale = Vector2(0.38566664, 0.30738887)
+texture = ExtResource("2_8tcn8")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="StaticBody2D10" unique_id=1304489736]
+position = Vector2(582.24994, 333.5)
+scale = Vector2(0.38450003, 0.28666666)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D10/StaticBody2D2" unique_id=1023239251]
+position = Vector2(-52.66566, -95.930244)
+scale = Vector2(1.0264412, 1.1193799)
+texture = ExtResource("3_r6vdu")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D10/StaticBody2D2" unique_id=1008272912]
+polygon = PackedVector2Array(210.01318, 99.41858, 223.01709, 333.13953, -544.213, 333.13953, -544.213, -354.06976, 301.04053, -354.06976, 303.64124, -1163.3721, 561.1184, -1166.8605, 563.71924, -172.67438, -330.9491, -169.18604, -320.5459, 95.9303)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D10/StaticBody2D2" unique_id=951697407]
+polygon = PackedVector2Array(-1553.3157, -1163.3721, -1431.079, -1163.3721, -1431.079, 40.116333, -936.9308, 120.34888, -936.9308, 245.9303, -1431.079, 245.9303, -1428.4783, 723.8373, -1168.4001, 723.8373, -1168.4001, 926.16284, -879.7136, 926.16284, -877.11285, 654.0698, -723.6668, 654.0698, -721.06604, 926.16284, -52.66565, 926.16284, -52.66565, 720.3489, 540.31226, 723.8373, 540.31226, 943.60474, 966.8401, 940.1162, 966.8401, 354.06982, 568.9209, 340.11633, 571.5217, 221.5116, 886.21606, 123.83728, 891.4175, -81.976685, 1312.7439, -78.4884, 1312.7439, -1170.3488, 1437.5813, -1166.8605, 1445.3838, 1097.093, -1571.5211, 1090.1162)
+
+[node name="Player" parent="." unique_id=1513298358 instance=ExtResource("4_21xmu")]
+position = Vector2(576, 304)
+
+[node name="Ladder" parent="." unique_id=467237968 instance=ExtResource("5_21xmu")]
+position = Vector2(148.00006, 250.00002)
+scale = Vector2(0.1, 0.1)
+next_level_scene = "uid://c7q2klgc06t1w"
+
+[node name="Lever" parent="." unique_id=827420974 instance=ExtResource("6_8i3m3")]
+position = Vector2(88.000015, 503.99997)
+scale = Vector2(0.05, 0.05)
+
+[node name="Ball" parent="." unique_id=1809031952 instance=ExtResource("7_8i3m3")]
+position = Vector2(986.99994, 250)
+scale = Vector2(0.1, 0.1)

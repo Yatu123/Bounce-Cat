@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://rxw6wwr6gm83"]
+
+[ext_resource type="Script" uid="uid://c2albgcieklsb" path="res://starting_screen.gd" id="1_l0vbx"]
+[ext_resource type="Texture2D" uid="uid://c5hm3n63ha8m4" path="res://Assets/Images/screen.PNG" id="2_grbrr"]
+[ext_resource type="PackedScene" uid="uid://dqa7rp26lfswj" path="res://player.tscn" id="3_0g0qd"]
+[ext_resource type="Texture2D" uid="uid://bp8b4yyua6pxw" path="res://icon.svg" id="4_gxvq4"]
+[ext_resource type="Texture2D" uid="uid://cidcmoif07vym" path="res://Assets/Images/Untitled14_0000-13-12_20261115092535.PNG" id="5_grbrr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grbrr"]
+size = Vector2(125, 186)
+
+[node name="Node2D" type="Node2D" unique_id=1897742605]
+script = ExtResource("1_l0vbx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=293319704]
+position = Vector2(583, 320)
+scale = Vector2(2.26, 2.106)
+texture = ExtResource("2_grbrr")
+
+[node name="ButtonManager" type="Control" parent="." unique_id=1214264468]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -3.0
+offset_top = 97.0
+offset_right = 37.0
+offset_bottom = 137.0
+
+[node name="Start" type="Button" parent="ButtonManager" unique_id=1475114844]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 229.0
+offset_right = 744.0
+offset_bottom = 284.0
+theme_override_font_sizes/font_size = 34
+text = "Start"
+icon_alignment = 1
+
+[node name="Story" type="Button" parent="ButtonManager" unique_id=255072031]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 231.0
+offset_right = 383.0
+offset_bottom = 431.0
+theme_override_font_sizes/font_size = 34
+text = "Story"
+
+[node name="Controls" type="Button" parent="ButtonManager" unique_id=438551196]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 225.0
+offset_right = 924.0
+offset_bottom = 425.0
+theme_override_font_sizes/font_size = 34
+text = "Controls
+"
+
+[node name="Quit" type="Button" parent="ButtonManager" unique_id=1744225878]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 372.0
+offset_right = 744.0
+offset_bottom = 427.0
+theme_override_font_sizes/font_size = 34
+text = "Quit"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1307630649]
+offset_left = 368.0
+offset_top = 98.0
+offset_right = 785.0
+offset_bottom = 258.0
+theme_override_font_sizes/normal_font_size = 67
+text = "Bounce Cat"
+vertical_alignment = 1
+
+[node name="Player" parent="." unique_id=1513298358 instance=ExtResource("3_0g0qd")]
+position = Vector2(204, 116)
+scale = Vector2(1, 1)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1364430977]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=62691614]
+position = Vector2(-116, 460)
+texture = ExtResource("4_gxvq4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1731172082]
+position = Vector2(588, 768)
+scale = Vector2(13.560002, 1.1999975)
+shape = SubResource("RectangleShape2D_grbrr")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=165618621]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1728702522]
+position = Vector2(-309, 213)
+scale = Vector2(4.925778, 5.624018)
+shape = SubResource("RectangleShape2D_grbrr")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1713125292]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4" unique_id=543207394]
+position = Vector2(-116, 460)
+texture = ExtResource("4_gxvq4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1970957968]
+position = Vector2(502, -122)
+scale = Vector2(13.20956, 1.336983)
+shape = SubResource("RectangleShape2D_grbrr")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=870890771]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D5" unique_id=2078138797]
+position = Vector2(-116, 460)
+texture = ExtResource("4_gxvq4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=1635127006]
+position = Vector2(1238, 118)
+scale = Vector2(1.2799976, 7.2799993)
+shape = SubResource("RectangleShape2D_grbrr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=154086672]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=288080814]
+position = Vector2(573, 293)
+scale = Vector2(0.50112504, 0.5)
+texture = ExtResource("5_grbrr")

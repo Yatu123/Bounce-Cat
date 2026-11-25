@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cbl8qxchtw7dr"]
+
+[ext_resource type="PackedScene" uid="uid://dqa7rp26lfswj" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://bp8b4yyua6pxw" path="res://icon.svg" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://ucsphnch75lv" path="res://ball.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cqjw6c77ygr22" path="res://lever.tscn" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://coy7mve00r1cl" path="res://ladder_area_2d.tscn" id="5_7mycd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_joqdt"]
+size = Vector2(125, 126)
+
+[node name="test2" type="Node2D" unique_id=901240634]
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1276027784]
+position = Vector2(2, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=1700774184]
+position = Vector2(1055, 477)
+texture = ExtResource("2_0xm2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=85583416]
+position = Vector2(1055, 478)
+shape = SubResource("RectangleShape2D_joqdt")
+
+[node name="Player" parent="." unique_id=1513298358 instance=ExtResource("1_ig7tw")]
+position = Vector2(459.00003, 355)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=27130738]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=792363088]
+position = Vector2(453, 466)
+texture = ExtResource("2_0xm2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1921997853]
+position = Vector2(453, 467)
+shape = SubResource("RectangleShape2D_joqdt")
+
+[node name="Ball" parent="." unique_id=1809031952 instance=ExtResource("3_h2yge")]
+position = Vector2(437, 291)
+scale = Vector2(0.06447136, 0.054588594)
+
+[node name="Area2D" parent="." unique_id=55492849 instance=ExtResource("4_lquwl")]
+position = Vector2(127, 389)
+scale = Vector2(0.09216526, 0.071272045)
+gravity = 980.0
+start_resting = null
+launch_speed = null
+gravity = 980.0
+drag = null
+worn_bounce = null
+rest_speed = null
+min_sound_impact = null
+
+[node name="LadderArea2D" parent="." unique_id=482494639 instance=ExtResource("5_7mycd")]
+position = Vector2(1099, 195)

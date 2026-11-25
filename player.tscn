@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://dqa7rp26lfswj"]
+
+[ext_resource type="Texture2D" uid="uid://c6vib4r8orkhr" path="res://Assets/Images/Player/Climb.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://5lt7ijrrg6dx" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="AudioStream" uid="uid://bdyc2ks7b3v03" path="res://Assets/Sound/Walk.mp3" id="2_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://bb5e5imu44cwd" path="res://Assets/Images/Player/Jump.png" id="3_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://cix8vx11c0v7c" path="res://Assets/Images/Player/actualwalk.png" id="3_sweqy"]
+[ext_resource type="AudioStream" uid="uid://cincb8nk7j3gg" path="res://Assets/Sound/Jump.mp3" id="4_hqtel"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6strp"]
+size = Vector2(263, 182)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b26j0"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(0, 0, 232, 284)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7ghd"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(232, 0, 232, 284)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
+atlas = ExtResource("3_sweqy")
+region = Rect2(0, 0, 262, 182)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
+atlas = ExtResource("3_i3pqv")
+region = Rect2(375, 0, 375, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jxqw"]
+atlas = ExtResource("3_i3pqv")
+region = Rect2(0, 0, 375, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw050"]
+atlas = ExtResource("3_sweqy")
+region = Rect2(0, 0, 262, 182)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvl01"]
+atlas = ExtResource("3_sweqy")
+region = Rect2(262, 0, 262, 182)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivps1"]
+atlas = ExtResource("3_sweqy")
+region = Rect2(524, 0, 262, 182)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_joqdt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b26j0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7ghd")
+}],
+"loop": 1,
+"name": &"Climb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hs0m")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sweqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jxqw")
+}],
+"loop": 1,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dw050")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvl01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dw050")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivps1")
+}],
+"loop": 1,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1513298358]
+scale = Vector2(0.3, 0.3)
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_onrkg")
+
+[node name="WalkSound" type="AudioStreamPlayer2D" parent="." unique_id=838028414]
+stream = ExtResource("2_2hs0m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1008553387]
+position = Vector2(0.5, -3)
+shape = SubResource("RectangleShape2D_6strp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1487923046]
+position = Vector2(2, -2)
+sprite_frames = SubResource("SpriteFrames_joqdt")
+animation = &"Jump"
+autoplay = "Idle"
+frame_progress = 0.86825913
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1215550677]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=369872565]
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1846048157]
+stream = ExtResource("4_hqtel")
+
+[node name="ladder_detect_ray" type="RayCast2D" parent="." unique_id=2126515683]
+position = Vector2(0, -1.75)
+target_position = Vector2(0, 5.5)
+collision_mask = 16
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="HoldPoint" type="Marker2D" parent="." unique_id=1198739886]
+position = Vector2(193.33333, -13.333333)

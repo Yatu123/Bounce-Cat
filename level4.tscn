@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bx8sqol4odd3f"]
+
+[ext_resource type="Script" uid="uid://brjolfrjobeuq" path="res://Scripts/Reset.gd" id="1_b4lsh"]
+[ext_resource type="Texture2D" uid="uid://cemfa44qt3e3d" path="res://Assets/Images/background.png" id="1_wh4pa"]
+[ext_resource type="Texture2D" uid="uid://dsu4omeshba7g" path="res://Assets/Images/Level 4 Shadow.PNG" id="2_gmhuy"]
+[ext_resource type="Texture2D" uid="uid://upg661dw26o7" path="res://Assets/Images/Level 4.PNG" id="3_g1tnb"]
+[ext_resource type="Texture2D" uid="uid://bcxlx05255urm" path="res://Assets/Images/Level 4 a.PNG" id="3_yxclo"]
+[ext_resource type="PackedScene" uid="uid://y7724j1ow585" path="res://ladder.tscn" id="4_g1tnb"]
+[ext_resource type="PackedScene" uid="uid://dqa7rp26lfswj" path="res://player.tscn" id="5_bp1i4"]
+[ext_resource type="PackedScene" uid="uid://ucsphnch75lv" path="res://ball.tscn" id="6_bvvno"]
+[ext_resource type="PackedScene" uid="uid://cqjw6c77ygr22" path="res://lever.tscn" id="7_bvvno"]
+
+[node name="Level 4" type="Node2D" unique_id=1492036882]
+script = ExtResource("1_b4lsh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=392637516]
+position = Vector2(640, 336)
+scale = Vector2(0.4, 0.298)
+texture = ExtResource("1_wh4pa")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=997738619]
+position = Vector2(-1102.5, -661.0738)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("3_yxclo")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1681098987]
+position = Vector2(658, 352)
+scale = Vector2(0.38450003, 0.28666666)
+
+[node name="Shadow" type="Sprite2D" parent="StaticBody2D2" unique_id=2123884760]
+position = Vector2(-93.62813, -258.13953)
+scale = Vector2(1.0535815, 1.2530113)
+texture = ExtResource("2_gmhuy")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=2040675262]
+position = Vector2(-49.414845, -80.23257)
+scale = Vector2(1.0264412, 1.1193799)
+texture = ExtResource("3_g1tnb")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1730555414]
+position = Vector2(658, 352)
+scale = Vector2(0.38450003, 0.28666666)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3" unique_id=1129393500]
+polygon = PackedVector2Array(135.2406, 104.65112, 135.2406, 216.27905, -340.70215, 216.27905, -338.10144, 816.27905, 93.62805, 816.27905, 93.62805, 488.37207, 460.33813, 488.37207, 460.33813, 156.97668, 1058.5176, 156.97668, 1061.1182, 272.09302, 673.60205, 272.09302, 673.60205, 816.27905, 1061.1182, 816.27905, 1061.1182, 596.5116, 1235.3706, 596.5116, 1235.3706, 300, 1284.7854, 300, 1284.7854, -1343.0233, 1487.6462, -1339.5349, 1490.2471, 1186.0464, 1133.9402, 1182.5581, 1131.3394, 987.2092, -340.70215, 987.2092, -340.70215, 1182.5581, -1040.312, 1186.0464, -1040.312, 1050, -1589.0765, 1046.5117, -1589.0765, -1339.5349, -423.92712, -1339.5349, -421.3263, -1070.9302, 392.71777, -1070.9302, 387.51636, -565.1163, 145.64368, -575.5814, 156.04688, -847.67444, -1279.5837, -847.67444, -1276.9829, -1046.5116, -673.60205, -1039.5349, -673.60205, -1269.7675, -1516.2548, -1269.7675, -1516.2548, -118.604614, -798.43945, -118.604614, -798.43945, 62.79065, -1531.8594, 66.27905, -1529.2587, 879.0698, -868.6605, 886.0464, -868.6605, 987.2092, -871.2613, 1036.0464, -530.5591, 1036.0464, -530.5591, 634.88367, -1110.533, 631.3954, -1115.7346, 394.18604, -533.1599, 401.16284, -530.5591, -198.83716, -340.70215, -198.83716, -335.5006, 101.16284)
+
+[node name="Ladder" parent="." unique_id=467237968 instance=ExtResource("4_g1tnb")]
+position = Vector2(1046, 208)
+scale = Vector2(0.1, 0.2199988)
+next_level_scene = "uid://bo2u3ferw3iop"
+
+[node name="Player" parent="." unique_id=1513298358 instance=ExtResource("5_bp1i4")]
+position = Vector2(370, 610)
+
+[node name="Ball" parent="." unique_id=1809031952 instance=ExtResource("6_bvvno")]
+position = Vector2(162, 271.99997)
+scale = Vector2(0.1, 0.1)
+
+[node name="Lever" parent="." unique_id=827420974 instance=ExtResource("7_bvvno")]
+position = Vector2(980, 569)
+scale = Vector2(0.05, 0.05)

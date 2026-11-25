@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cx3lbtlejx115"]
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1779002192]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=936774277]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=117336361]

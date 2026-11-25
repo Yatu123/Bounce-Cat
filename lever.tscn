@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cqjw6c77ygr22"]
+
+[ext_resource type="Texture2D" uid="uid://lvkpgddgjsd1" path="res://Assets/Images/Untitled3_20261114134744.png" id="1_0ohsc"]
+[ext_resource type="Script" uid="uid://0qt8vhgrount" path="res://lever.gd" id="1_7uavd"]
+[ext_resource type="AudioStream" uid="uid://d3c1oxguau1p4" path="res://Assets/Sound/Switch.mp3" id="3_soi7j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_joqdt"]
+size = Vector2(1587.5, 1337.5)
+
+[node name="Lever" type="Area2D" unique_id=827420974]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_7uavd")
+one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=387769904]
+texture = ExtResource("1_0ohsc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1655765592]
+position = Vector2(26.25, -344.25)
+shape = SubResource("RectangleShape2D_joqdt")
+
+[node name="ToggleSound" type="AudioStreamPlayer2D" parent="." unique_id=310032342]
+stream = ExtResource("3_soi7j")
